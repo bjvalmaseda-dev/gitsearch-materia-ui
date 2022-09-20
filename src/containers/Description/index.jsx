@@ -9,11 +9,11 @@ const Description = (props) => {
   const { bio } = data;
   return (
     <>
-      <Stack>
+      <Stack sx={{ justifyContent: "center" }}>
         {bio ? (
-          <Typography>{bio}</Typography>
+          <Typography variant="body1">{bio}</Typography>
         ) : (
-          <Typography>
+          <Typography variant="body1">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
             provident repellendus harum eos voluptates, ipsa, unde laboriosam
             facilis quae vel voluptatem magni commodi labore eligendi totam

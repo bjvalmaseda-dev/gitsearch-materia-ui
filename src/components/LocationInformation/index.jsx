@@ -7,13 +7,13 @@ const LocationInformation = (props) => {
   const { data } = props;
   const { location, twitter_username, blog, company } = data;
   return (
-    <Grid container>
+    <Grid container spacing={2} sx={{ marginTop: "15px" }}>
       <Grid item xs={6}>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <LocationOn />
           <Typography>{location}</Typography>
         </Stack>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <Twitter />
           {twitter_username ? (
             <Typography>{`@${twitter_username}`}</Typography>
@@ -23,15 +23,17 @@ const LocationInformation = (props) => {
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <Language />
           {blog ? (
-            <Typography>{blog}</Typography>
+            <a href={blog} target="_blank">
+              <Typography>{blog}</Typography>
+            </a>
           ) : (
             <Typography>Not available</Typography>
           )}
         </Stack>
-        <Stack>
+        <Stack direction="row" spacing={2}>
           <Business />
           {company ? (
             <Typography>{company}</Typography>
