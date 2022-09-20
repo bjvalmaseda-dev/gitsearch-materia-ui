@@ -4,6 +4,7 @@ import { Container } from "@mui/material";
 import Searcher from "./components/searcher";
 
 import { getGitHubUsers } from "./services/users";
+import UserCard from "./containers/UserCard";
 
 const App = () => {
   const [inputUser, setInputUser] = useState("octocat");
@@ -30,7 +31,6 @@ const App = () => {
     })();
   }, [inputUser]);
 
-  console.log(data);
   return (
     <Container
       sx={{
@@ -45,6 +45,7 @@ const App = () => {
       }}
     >
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+      <UserCard data={data} />
     </Container>
   );
 };
